@@ -1,12 +1,54 @@
 <template name="Header">
-    <div class="ui top fixed borderless inverted menu">
-  <div class="ui container">
-      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>meteor-application-template</h1></a>
-      {{#if currentUser}}
-        <a class="{{ isActiveRoute 'Add_Stuff_Page'}} item" href="{{ pathFor 'Add_Stuff_Page' }}">Add Stuff </a>
-        <a class="{{ isActiveRoute 'List_Stuff_Page'}} item" href="{{ pathFor 'List_Stuff_Page' }}">List Stuff</a>
-      {{/if}}
-      <a href="#" class="item">{{> loginButtons }} </a>
+  <div class="ui top fixed borderless inverted menu">
+    <div class="ui container">
+      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>meteor-semanticui-dropdown</h1></a>
+
+      <div class="ui dropdown item">
+        <div class="text">Static Dropdown</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">Dropdown item 1</div>
+          <div class="item">Dropdown item 2</div>
+        </div>
+      </div>
+
+      <div class="ui dropdown">
+        <div class="text">File</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">New</div>
+          <div class="item">
+            <span class="description">ctrl + o</span>
+            Open...
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
+
+  <div class="ui menu">
+    <a class="item">
+      Home
+    </a>
+    <a class="ui dropdown item">
+      Messages
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="item">
+          <i class="dropdown icon"></i>
+          <span class="text">Categories</span>
+          <div class="menu">
+            <div class="item">Unread</div>
+            <div class="item">Promotions</div>
+            <div class="item">Updates</div>
+          </div>
+        </div>
+        <div class="item">Archive</div>
+      </div>
+    </a>
+    <a class="item">
+      Browse
+    </a>
   </div>
 </template>
